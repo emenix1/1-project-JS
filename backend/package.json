@@ -1,0 +1,40 @@
+{
+    "name": "@js_ts/backend",
+    "private": "true",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "ts-node-dev --watch ./.env --rs src/index.ts",
+        "types": "tsc --noEmit --project ./tsconfig.json",
+        "build": "tsc --build .tsconfig.json",
+        "start": "node dist/index.js",
+        "pmd": "pnpm prisma migrate dev --schema=src/prisma/schema.prisma",
+        "pgc": "prisma generate",
+        "lint": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache --ext .ts .",
+        "prepare": "pnpm pgc"
+    },
+    "prisma": {
+        "schema": "./src/prisma/schema.prisma"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.19",
+        "@types/express": "^5.0.3",
+        "@types/jsonwebtoken": "^9.0.10",
+        "@types/lodash": "^4.17.20",
+        "@types/node": "^24.1.0",
+        "@types/passport": "^1.0.17",
+        "@types/passport-jwt": "^4.0.1",
+        "lodash": "^4.17.21",
+        "prisma": "^6.13.0"
+    },
+    "dependencies": {
+        "@prisma/client": "^6.13.0",
+        "@trpc/server": "^11.4.3",
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.1",
+        "express": "^5.1.0",
+        "jsonwebtoken": "^9.0.2",
+        "passport": "^0.7.0",
+        "passport-jwt": "^4.0.1",
+        "zod": "^4.0.10"
+    }
+}

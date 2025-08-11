@@ -1,0 +1,27 @@
+{
+    "name": "js_ts",
+    "private": "true",
+    "version": "0.0.0",
+    "scripts": {
+        "b": "pnpm --filter @js_ts/backend",
+        "w": "pnpm --filter @js_ts/webapp",
+        "dev": "pnpm -r --parallel dev",
+        "types": "pnpm b types && pnpm w types"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.31.0",
+        "@typescript-eslint/eslint-plugin": "^8.38.0",
+        "@typescript-eslint/parser": "^8.38.0",
+        "eslint": "^9.31.0",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.1.2",
+        "prettify": "link:prettier --loglevel warn --cache --write '{src/**/*,*}.{ts,tsx,js,json,yml,scss}' '!**/{node_modules,dist}/**/*'",
+        "rimraf": "^6.0.1",
+        "ts-node": "^10.9.2",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.8.3"
+    },
+    "dependencies": {
+        "superjson": "^2.2.2"
+    }
+}
